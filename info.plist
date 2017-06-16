@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>zz-ohaqyrf@sereba.pbz</string>
+	<key>contactName</key>
+	<string>Benny Kjær Nielsen</string>
+	<key>description</key>
+	<string>Integration with Receipts.</string>
+	<key>name</key>
+	<string>Receipts</string>
+	<key>uuid</key>
+	<string>2AD30B92-739F-4BEE-BF9A-0672DE28708B</string>
+</dict>
+</plist>

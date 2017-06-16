@@ -1,0 +1,21 @@
+#!/bin/bash
+
+mkdir -p "$TMPDIR/com.freron.MailMate.Receipts"
+TMPFILE="$TMPDIR/com.freron.MailMate.Receipts/ReceiptsMove-${MM_ID}.eml"
+cat > "${TMPFILE}"
+
+osascript <<END
+try
+	tell application id "com.apperdeck.mac.Receipts"
+		open POSIX file "${TMPFILE}"
+	end tell
+on error _errorMessage number _errorNumber
+	tell application "System Events"
+		activate
+		display alert "Receipts error: " & _errorNumber message _errorMessage
+	end tell
+end try
+END
+
+# This is handled by Receipts when the filename has "ReceiptsMove-" prefixed.
+# unlink "${TMPFILE}"

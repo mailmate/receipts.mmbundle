@@ -1,0 +1,7 @@
+{
+	name          = 'Add...';
+	input         = 'raw';
+	command       = '#!/bin/bash\n"${MM_BUNDLE_SUPPORT}/bin/add"\n';
+	keyEquivalent = "^A";
+	uuid          = '32945B67-C980-4572-A0EF-47627A5E35A7';
+}
