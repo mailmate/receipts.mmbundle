@@ -4,9 +4,35 @@ mkdir -p "$TMPDIR/com.freron.MailMate.Receipts"
 TMPFILE="$TMPDIR/com.freron.MailMate.Receipts/ReceiptsMove-${MM_ID}.eml"
 cat > "${TMPFILE}"
 
+####################################################
+### Check to make sure Receipts.app is installed ###
+####################################################
+
+BUNDLEID="" # bundle identifier to run Receipts.app from.
+
+if [[ -d /Applications/Receipts.app ]]
+then
+	BUNDLEID='com.apperdeck.mac.Receipts'
+elif [[ -d /Applications/Setapp/Receipts.app ]]
+then
+	BUNDLEID='de.holtwick.mac.receipts-setapp'
+else
+	osascript <<END
+		tell application "System Events"
+			activate
+			display alert "Receipts error: Could not find the receipts application in /Applications or /Applications/Setapp"
+		end tell
+	exit 1
+END
+fi
+
+####################################
+### Send message to Receipts.app ###
+####################################
+
 osascript <<END
 try
-	tell application id "com.apperdeck.mac.Receipts"
+	tell application id "${BUNDLEID}"
 		open POSIX file "${TMPFILE}"
 	end tell
 on error _errorMessage number _errorNumber
