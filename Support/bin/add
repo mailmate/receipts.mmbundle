@@ -10,7 +10,7 @@ cat > "${TMPFILE}"
 
 BUNDLEID="" # bundle identifier to run Receipts.app from.
 
-if [[ -d /Applications/Receipts Spase.app ]]
+if [[ -d "/Applications/Receipts Space.app" ]]
 then
 	BUNDLEID='de.holtwick.mac.appstore.Receipts2'
 elif [[ -d /Applications/Receipts.app ]]
