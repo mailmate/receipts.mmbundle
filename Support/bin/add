@@ -10,7 +10,10 @@ cat > "${TMPFILE}"
 
 BUNDLEID="" # bundle identifier to run Receipts.app from.
 
-if [[ -d /Applications/Receipts.app ]]
+if [[ -d /Applications/Receipts Spase.app ]]
+then
+	BUNDLEID='de.holtwick.mac.appstore.Receipts2'
+elif [[ -d /Applications/Receipts.app ]]
 then
 	BUNDLEID='com.apperdeck.mac.Receipts'
 elif [[ -d /Applications/Setapp/Receipts.app ]]
